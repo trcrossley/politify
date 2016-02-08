@@ -1,0 +1,3 @@
+politify.controller('PolitifyController', [function () {
+
+}]);
