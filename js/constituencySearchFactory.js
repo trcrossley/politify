@@ -1,4 +1,4 @@
-politify.factory('ConsituencySearch', ['$http', function($http) {
+politify.factory('ConstituencySearch', ['$http', function($http) {
   var queryURL = "https://api.postcodes.io/postcodes/";
   return {
     query: function(postcode) {

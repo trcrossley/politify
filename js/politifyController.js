@@ -1,4 +1,4 @@
-politify.controller('PolitifyController', ['ConsituencySearch', function (ConsituencySearch) {
+politify.controller('PolitifyController', ['ConstituencySearch', function (ConsituencySearch) {
 
   var self = this;
   self.postcode = '';
