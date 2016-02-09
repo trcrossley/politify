@@ -21,6 +21,12 @@
         <button class="btn" ng-click="politifyCtrl.doSearch()">Search</button>
       </form>
     </div>
-    <p data-ng-bind="politifyCtrl.constituencyResults.parliamentary_constituency"></p>
+    <ul class="results">
+      <li data-ng-bind="politifyCtrl.mpResults.full_name"></li>
+      <li data-ng-bind="politifyCtrl.mpResults.party"></li>
+      <li data-ng-bind="politifyCtrl.mpResults.constituency"></li>
+      <li data-ng-bind="politifyCtrl.mpResults.office[0].dept"></li>
+      <li><a class="btn" ng-href="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.url}}">Website</a></li>
+    </ul>
   </body>
 </html>

@@ -11,10 +11,9 @@ politify.controller('PolitifyController', ['ConsituencySearch','MpSearch', funct
         self.constituencyResults = response.data.result;
         MpSearch.query(self.constituencyResults.parliamentary_constituency)
           .then(function(response) {
-            self.mpResults = response.data.result;
+            self.mpResults = response.data;
             console.log(response);
           });
-        console.log(response);
       });
   };
 
