@@ -3,20 +3,26 @@ describe('factory: MpSearch', function() {
 
   beforeEach(module('Politify'));
 
-  beforeEach(inject(function(MpSearch){
-    mpSearch = MpSearch;
-  }));
 
-  beforeEach(inject(function($httpBackend){
-    httpBackend = $httpBackend
+  beforeEach(inject(function(MpSearch, $httpBackend){
+    mpSearch = MpSearch;
+    httpBackend = $httpBackend;
     httpBackend
-    .when('GET', "http://www.theyworkforyou.com/api/getMP?constituency=christchurch&key=CZog2vDXeZTXGfbksgA3L6hd&output=js")
+    .when("GET", "http://www.theyworkforyou.com/api/getMP?constituency=christchurch&key=CZog2vDXeZTXGfbksgA3L6hd&output=js")
     .respond(
-      { items: items }
+      { items: "MP Data" }
     );
   }));
 
   it('responds to query', function(){
     expect(mpSearch.query).toBeDefined();
   });
-}
+
+  it('returns search results', function () {
+    mpSearch.query()
+      .then(function (response) {
+        expect(response.data.full_name).toEqual
+        ("MP Data");
+      });
+  });
+});
