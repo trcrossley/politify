@@ -4,7 +4,8 @@
   "description": "Find your local MP info",
   "main": "index.js",
   "scripts": {
-    "test": "karma start app/test/karma"
+    "test": "karma start app/test/karma",
+    "start": "http-server ."
   },
   "repository": {
     "type": "git",
