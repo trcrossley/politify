@@ -9,6 +9,7 @@
     <script src="js/app.js"></script>
     <script src="js/politifyController.js"></script>
     <script src="js/mpSearchFactory.js"></script>
+    <script src="js/newsApiFactory.js"></script>
   </head>
 
   <body ng-controller="PolitifyController as politifyCtrl">
@@ -27,5 +28,18 @@
       <li><img ng-src="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.image}}"></img></li>
       <li><a class="btn" ng-href="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.url}}">Website</a></li>
     </ul>
+
+    <ul class="news">
+      <li ng-repeat= "links in politifyCtrl.newsResults.items">
+        <a ng-href="{{links.link}}">{{links.title}}</a>
+      </li>
+
+    </ul>
+
+    <!-- <form class="form-horizontal">
+      <input type="text" value="politifyCtrl.mpResults.full_name">
+      <button class="btn-hide">hide</button>
+    </form> -->
+
   </body>
 </html>
