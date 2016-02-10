@@ -1,5 +1,5 @@
 politify.factory('MpSearch', ['$http', function($http) {
-  var queryUrl = "http://www.theyworkforyou.com/api/getMP?constituency=";
+  var queryUrl = "http://www.theyworkforyou.com/api/getMP?postcode=";
   var key = "&key=CZog2vDXeZTXGfbksgA3L6hd"
   return {
 
