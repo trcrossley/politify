@@ -30,6 +30,7 @@
     "protractor": "^3.0.0"
   },
   "dependencies": {
+    "angular-material": "^1.0.5",
     "http-server": "^0.8.5"
   }
 }

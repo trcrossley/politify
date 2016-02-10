@@ -1,6 +1,11 @@
 .page-header {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
+  color: white;
+}
+
+body[ng-cloak] {
+  display:none;
 }
 
 body {
@@ -9,4 +14,53 @@ body {
   line-height: 1.2;
   color: #FFFFFF;
   background-color: #2E2F33;
+}
+
+md-sidenav  {
+  font-weight: bold;
+  font-size: 120%;
+  width: 110px;
+  height:100%;
+  padding:20px;
+  background-color: #343436;
+}
+
+md-content {
+  background-color : #000000;
+  color: white;
+  height:100%;
+  padding:30px;
+}
+
+/*section {
+  background-color: #dedede;
+}*/
+
+/*Header*/
+section[flex="30"] {
+  background-color: #262626;
+}
+
+/*Search bar*/
+section[flex="20"] {
+ background-color: #2EBD59;
+}
+
+/*Thumbnail, Summary, News*/
+section[flex="50"] {
+  background-color: #262626;
+}
+
+section[flex=""] {
+  background-color: rgba(0, 128, 0, 0.35);
+}
+
+/*.boxWithHeight {
+  box-sizing: border-box;
+  height: 100%;
+}*/
+
+.a, section {
+  border: 3px solid rgba(85, 97, 85, 0.27);
+  margin: 5px;
 }

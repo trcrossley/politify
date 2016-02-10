@@ -2,6 +2,22 @@
 // Generated on Mon Feb 08 2016 16:38:52 GMT+0000 (GMT)
 
 module.exports = function(config) {
+
+  var SRC = [
+    'js/**/*.js',
+    'test/**/*.spec.js'
+  ];
+
+  var LIBS = [
+    'node_modules/angular/angular.js',
+    'node_modules/angular-animate/angular-animate.js',
+    'node_modules/angular-aria/angular-aria.js',
+    'node_modules/angular-material/angular-material.js',
+
+    'node_modules/angular-mocks/angular-mocks.js',
+    'node_modules/angular-material/angular-material-mocks.js'
+  ];
+
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)

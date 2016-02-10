@@ -1,7 +1,6 @@
 
 politify.controller('PolitifyController', ['MpSearch', 'NewsSearch', function (MpSearch, NewsSearch) {
 
-
   var self = this;
   self.postcode = '';
 
