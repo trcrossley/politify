@@ -6,14 +6,10 @@ politify.controller('PolitifyController', ['ConsituencySearch','MpSearch', funct
 
   self.doSearch = function() {
 
-    ConsituencySearch.query(self.postcode)
+    MpSearch.query(self.postcode)
       .then(function(response) {
-        self.constituencyResults = response.data.result;
-        MpSearch.query(self.constituencyResults.parliamentary_constituency)
-          .then(function(response) {
-            self.mpResults = response.data;
-            console.log(response);
-          });
+        self.mpResults = response.data;
+        console.log(response);
       });
   };
 
