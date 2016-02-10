@@ -2,8 +2,12 @@
 <html lang="en" ng-app="Politify">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Politify</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald|Voltaire' rel='stylesheet' type='text/css'>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>
@@ -12,34 +16,45 @@
     <script src="js/newsApiFactory.js"></script>
   </head>
 
-  <body ng-controller="PolitifyController as politifyCtrl">
-    <h1 id="app-Name">Politify V.1.0</h1>
-    <div>
-      <form class="form-horizontal">
-        <input type="text" ng-model="politifyCtrl.postcode" >
-        <button class="btn" ng-click="politifyCtrl.doSearch()">Search</button>
-      </form>
+  <body ng-controller="PolitifyController as politifyCtrl" class="container">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="page-header">
+          <h1 id="app-Name" class="text-justify">Politify V.1.0</h1>
+          <p>Get political !</p>
+        </div>
+        <div class="span4">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="politifyCtrl.doSearch()">Search</button>
+            </span>
+            <input type="text" class="form-control" placeholder="Enter your postcode" ng-model="politifyCtrl.postcode" >
+          </div>
+        </div>
+        <div class="row-fluid">
+          <p></p>
+          <div class="span6">
+            <div class="thumbnail">
+              <img ng-src="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.image}}" class="img-rounded"></img>
+              <div class="caption">
+                <h3 data-ng-bind="politifyCtrl.mpResults.full_name"></h3>
+                <p data-ng-bind="politifyCtrl.mpResults.party"></p>
+                <p id="constituency" data-ng-bind="politifyCtrl.mpResults.constituency"></p>
+                <p data-ng-bind="politifyCtrl.mpResults.office[0].dept"></p>
+                <p>
+                   <a class="btn btn-primary" ng-href="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.url}}" role="button">Website</a>
+                   <a class="btn btn-default" role="button">Twitter</a>
+                </p>
+                <ul class="news">
+                  <li ng-repeat= "links in politifyCtrl.newsResults.items">
+                    <a ng-href="{{links.link}}">{{links.title}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <ul class="results">
-      <li data-ng-bind="politifyCtrl.mpResults.full_name"></li>
-      <li data-ng-bind="politifyCtrl.mpResults.party"></li>
-      <li id="constituency" data-ng-bind="politifyCtrl.mpResults.constituency"></li>
-      <li data-ng-bind="politifyCtrl.mpResults.office[0].dept"></li>
-      <li><img ng-src="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.image}}"></img></li>
-      <li><a class="btn" ng-href="http://www.theyworkforyou.com/{{politifyCtrl.mpResults.url}}">Website</a></li>
-    </ul>
-
-    <ul class="news">
-      <li ng-repeat= "links in politifyCtrl.newsResults.items">
-        <a ng-href="{{links.link}}">{{links.title}}</a>
-      </li>
-
-    </ul>
-
-    <!-- <form class="form-horizontal">
-      <input type="text" value="politifyCtrl.mpResults.full_name">
-      <button class="btn-hide">hide</button>
-    </form> -->
-
   </body>
 </html>
