@@ -1,0 +1,27 @@
+
+<div class="card">
+  <fieldset>
+  <h1 id="app-Name">Politify V.1.0</h1>
+  <div>
+    <form class="form-horizontal">
+      <input type="text" ng-model="successCtrl.postcode" >
+      <button class="btn" ng-click="successCtrl.doSearch()">Search</button>
+    </form>
+  </div>
+  <ul class="results">
+    <li data-ng-bind="successCtrl.mpResults.full_name"></li>
+    <li data-ng-bind="successCtrl.mpResults.party"></li>
+    <li id="constituency" data-ng-bind="successCtrl.mpResults.constituency"></li>
+    <li data-ng-bind="successCtrl.mpResults.office[0].dept"></li>
+    <li><img ng-src="http://www.theyworkforyou.com/{{successCtrl.mpResults.image}}"></img></li>
+    <li><a class="web-link" ng-href="http://www.theyworkforyou.com/{{successCtrl.mpResults.url}}">Website</a></li>
+  </ul>
+
+  <ul class="news">
+    <li ng-repeat= "links in successCtrl.newsResults.items">
+      <a ng-href="{{links.link}}">{{links.title}}</a>
+    </li>
+
+  </ul>
+</fieldset>
+</div>
