@@ -1,17 +1,8 @@
-﻿'use strict';
-app.controller('IndexCtrl', function ($scope, $mdSidenav, $state) {
+
+politify.controller('IndexCtrl', function ($scope, $mdSidenav, $state) {
     $scope.menuItems = [
-      { name: 'autocomplete', path: 'autocomplete' },
-      { name: 'bottom sheet', path: 'bottomSheet' },
-      { name: 'button', path: 'button' },
-      { name: 'card', path: 'card' },
-      { name: 'date picker', path: 'datePicker' },
-      { name: 'grid list', path: 'gridList' },
-      { name: 'input', path: 'input' },
-      { name: 'progress circular', path: 'progressCircular' },
-      { name: 'progress linear', path: 'progressLinear' },
-      { name: 'toast', path: 'toast' },
-      { name: 'whiteframe', path: 'whiteframe' },
+      { name: 'summary', path: 'summary' },
+
     ];
 
     $scope.title = 'home';
@@ -19,12 +10,12 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state) {
     $scope.go = function (path, title) {
         $state.go(path);
         $scope.title = title;
-    }
+    };
 
     $scope.toggleLeft = function () {
         $mdSidenav('left')
               .toggle();
-    }
+    };
 
     $scope.menuIcon = 'menu';
     $scope.menuToggle = function () {
@@ -38,5 +29,5 @@ app.controller('IndexCtrl', function ($scope, $mdSidenav, $state) {
               .close();
             $scope.menuIcon = 'menu';
         }
-    }
+    };
 });

@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('AutocompleteCtrl', function($timeout, $q, $log) {
+politify.controller('SummaryCtrl', function($timeout, $q, $log) {
     var self = this;
 
     self.simulateQuery = false;

@@ -1,26 +1,61 @@
 ﻿<div class="jumbotron">
-    <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png" width="100%" />
+    <!-- Logo or something -->
+    <!-- <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png" width="100%" /> -->
 </div>
-<md-content>
+<md-content ng-controller="HomeCtrl as hm">
+
+    <!-- Item 1 -->
     <div layout="row" layout-sm="column">
         <div class="page-header text-center">
-            <h1>Angular Material Kitchen Sink</h1>
+            <h1 class="md-display-2">Find Your Representative</h1>
         </div>
     </div>
     <div layout="row" layout-sm="column">
-        <div flex style="margin:10px;">
-            <p class="text-center">Angular Material Kitchen Sink is a starting point for building Angular Material web app. It has everything that Angular Material has to offer. All you have to do is modify the code to your own and remove the stuff you don't want. Much of the code comes from <a href="https://material.angularjs.org/latest/">Angular Material docs</a> code snippets. </p>
-        </div>
-        <div flex style="margin:10px;">
-            <iframe style="width:100%;max-width:560px;height:315px;" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
-        </div>
+      <div flex style="margin:10px;">
+        <input type="text" ng-model="hm.postcode" placeholder="Enter your postcode">
+        <md-button class="md-raised md-accent" ng-click="hm.doSearch()">Search</md-button>
+      </div>
+      <div flex style="margin:10px;">
+        <md-card flex>
+          <img ng-src="http://www.theyworkforyou.com/{{hm.mpResults.image}}" style-parent class="md-card-image" alt="Democracy!">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline" data-ng-bind="hm.mpResults.full_name"></span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p data-ng-bind="hm.mpResults.party"></p>
+            <p id="constituency" data-ng-bind="hm.mpResults.constituency"></p>
+            <p data-ng-bind="hm.mpResults.office[0].dept"></p>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+      <div flex style="margin:10px;">
+          <p class="text-center">Some stuff about our app. <a href="https://material.angularjs.org/latest/">A link to something</a> some more things. Maybe a video demo. </p>
+      </div>
+      <!-- <div flex style="margin:10px;">
+          <iframe style="width:100%;max-width:560px;height:315px;" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+      </div> -->
     </div>
     <br />
     <md-divider></md-divider>
     <br />
+
+    <!-- Item 2 -->
    <div layout="row" layout-sm="column">
         <div flex class="page-header text-center">
-            <h2>AngularJS</h2>
+            <h2 class="md-display-2">News About Your Representative</h2>
         </div>
         <md-button href="https://angularjs.org/" title="Documentation" target="_blank" aria-label="AngularJS">
             <i class="material-icons">launch</i>
@@ -32,17 +67,21 @@
             <img src="http://ionicframework.com/present-ionic/slides/img/angular-icon.png" width="100%" />
         </div>
         <div flex="75" style="margin:10px;">
-            <p class="text-primary">HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p>
-            <p class="text-primary">Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.</p>
-            <p class="text-primary">AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs. Read on to find out how.</p>
+          <ul class="news">
+            <li ng-repeat= "links in hm.newsResults.items">
+              <a ng-href="{{links.link}}">{{links.title}}</a>
+            </li>
+          </ul>
         </div>
     </div>
     <br />
     <md-divider></md-divider>
     <br />
+
+    <!-- Item 3 -->
     <div layout="row" layout-sm="column">
         <div flex class="page-header text-center">
-            <h2>Material Design</h2>
+            <h2>Item 3</h2>
         </div>
         <md-button href="https://www.google.com/design/spec/material-design/introduction.html" title="Documentation" target="_blank" aria-label="AngularJS">
             <i class="material-icons">launch</i>
@@ -70,15 +109,14 @@
             <p class="text-primary">An emphasis on user actions makes core functionality immediately apparent and provides waypoints for the user.</p>
         </div>
     </div>
+
     <div layout="row" layout-sm="column">
         <div flex style="margin:10px;">
             <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bx4BSt6jniD7dkRYelJkeklqWFU/materialdesign_principles_motion.png" width="100%" />
         </div>
         <div flex="75" style="margin:10px;">
             <h3>Motion provides meaning</h3>
-            <p class="text-primary">Motion respects and reinforces the user as the prime mover. Primary user actions are inflection points that initiate motion, transforming the whole design.</p>
-            <p class="text-primary">All action takes place in a single environment. Objects are presented to the user without breaking the continuity of experience even as they transform and reorganize.</p>
-            <p class="text-primary">Motion is meaningful and appropriate, serving to focus attention and maintain continuity. Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.</p>
+            <p class="text-primary">some text</p>
         </div>
     </div>
 

@@ -10,41 +10,35 @@
     <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
     <!-- Local Styles-->
     <link href="site.css" rel="stylesheet" />
-    <link href="app/styles/bottomSheet.css" rel="stylesheet" />
-    <link href="app/styles/button.css" rel="stylesheet" />
-    <link href="app/styles/card.css" rel="stylesheet" />
-    <link href="app/styles/datePicker.css" rel="stylesheet" />
-    <link href="app/styles/progressCircular.css" rel="stylesheet" />
-    <link href="app/styles/progressLinear.css" rel="stylesheet" />
-    <link href="app/styles/whiteframe.css" rel="stylesheet" />
     <!-- CDN Styles -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body ng-app="App" layout="row" ng-controller="IndexCtrl" ng-cloak>
+<body ng-app="Politify" layout="row" ng-controller="IndexCtrl" ng-cloak>
+
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                 md-component-id="left"
-                style="background-color:#4DD0E1;"
+                style="background-color:#000000;"
                 md-is-locked-open="$mdMedia('gt-sm')">
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <div class="md-toolbar-tools">
                 <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
                     <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:middle;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
                 </md-button>
-                <h2 style="color:white;">ANGULAR MATERIAL</h2>
+                <h2 style="color:white;">POLITIFY</h2>
             </div>
         </md-toolbar>
 
         <md-list>
             <md-list-item ng-click="go('home','home');menuToggle();">
-                <i class="material-icons" style="color:white;">home</i> <p style="font-size:18px;color:white;">HOME</p>
+                <i class="material-icons" style="color:white;"></i> <p style="font-size:18px;color:white;">HOME</p>
             </md-list-item>
             <md-divider></md-divider>
             <md-list-item ng-repeat="item in menuItems" ng-click="go(item.path,item.name);menuToggle();">
                 <p style="font-size:18px;color:white;">{{item.name | uppercase}}</p>
             </md-list-item>
         </md-list>
-
     </md-sidenav>
+
     <div layout="column" layout-fill>
         <header style="color:white;">
             <md-toolbar layout="row" class="md-whiteframe-z1 md-primary md-hue-2">
@@ -85,7 +79,9 @@
     <script src="app/controllers/indexCtrl.js"></script>
     <script src="app/controllers/homeCtrl.js"></script>
     <script src="app/controllers/sideNavLeftCtrl.js"></script>
-    <script src="app/controllers/autocompleteCtrl.js"></script>
+    <script src="app/controllers/summaryCtrl.js"></script>
+    <script src="app/controllers/mpSearchFactory.js"></script>
+    <script src="app/controllers/newsApiFactory.js"></script>
     <!-- <script src="app/controllers/bottomSheetCtrl.js"></script>
     <script src="app/controllers/buttonCtrl.js"></script>
     <script src="app/controllers/cardCtrl.js"></script>
