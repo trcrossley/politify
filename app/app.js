@@ -1,5 +1,4 @@
-﻿
-var app = angular.module('App', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
+﻿var app = angular.module('App', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons']);
 
 app.config(function ($stateProvider,$urlRouterProvider) {
 
@@ -65,7 +64,7 @@ app.config(function ($stateProvider,$urlRouterProvider) {
         templateUrl: "app/views/whiteframe.html"
     })
 
-  
+
 });
 
 app.config(function ($mdThemingProvider) {
@@ -84,5 +83,5 @@ app.config(function ($mdThemingProvider) {
 app.config(function($mdIconProvider) {
     $mdIconProvider
       .iconSet('social', 'bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.svg', 24)
-      .defaultIconSet('img/icons/sets/core-icons.svg', 24);    
+      .defaultIconSet('img/icons/sets/core-icons.svg', 24);
 });
