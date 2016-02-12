@@ -1,0 +1,45 @@
+﻿<div class="jumbotron">
+    <!-- Logo or something -->
+    <img src="css/img/Black_Banner_800x200.jpg" width="100%" />
+</div>
+<md-content class="md-primary">
+
+    <!-- Item 1 -->
+    <div layout="row" layout-sm="column">
+        <div flex style="margin:30px; background-color:#FFD740;">
+            <h1 class="md-display-2">Find Your Representative</h1>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row" layout-sm="column">
+      <div flex style="margin:10px;">
+        <input type="text" ng-model="hm.postcode" placeholder="Enter your postcode">
+        <md-button class="md-raised md-accent" ng-click="hm.doSearch()">Search</md-button>
+      </div>
+      <div flex style="margin:10px;">
+          <p class="text-center">Some stuff about our app. <a href="https://material.angularjs.org/latest/">A link to something</a> some more things. Maybe a video demo. </p>
+      </div>
+      <!-- <div flex style="margin:10px;">
+          <iframe style="width:100%;max-width:560px;height:315px;" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+      </div> -->
+    </div>
+    <br />
+    <md-divider></md-divider>
+    <br />
+
+    <!-- Item 2 -->
+   <div layout="row" layout-sm="column">
+        <div flex class="page-header text-center">
+            <h2 class="md-display-2">News About Your Representative</h2>
+        </div>
+        <md-button href="https://angularjs.org/" title="Documentation" target="_blank" aria-label="AngularJS">
+            <i class="material-icons">launch</i>
+            AngularJS Docs
+        </md-button>
+    </div>
+    <br />
+    <md-divider></md-divider>
+    <br />
+
+
+</md-content>
