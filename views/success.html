@@ -1,0 +1,43 @@
+
+<div class="card">
+  <fieldset>
+  <h1 id="app-Name">Search For Your MP</h1
+    <p>Enter Postcode</p>
+  <div>
+    <form class="form-horizontal">
+      <input type="text" ng-model="successCtrl.postcode" style="text-transform:uppercase">
+      <button class="btn" ng-click="successCtrl.doSearch()">Search</button>
+    </form>
+  </div>
+  <div class="all-results" ng-show="successCtrl.validate && successCtrl.postcode">
+  <ul class="results">
+    <li data-ng-bind="successCtrl.mpResults.full_name"></li>
+    <li data-ng-bind="successCtrl.mpResults.party"></li>
+    <li id="constituency" data-ng-bind="successCtrl.mpResults.constituency"></li>
+    <li data-ng-bind="successCtrl.mpResults.office[0].dept"></li>
+    <li><img ng-src="http://www.theyworkforyou.com/{{successCtrl.mpResults.image}}" alt="No Image available"></img></li>
+    <li><a class="web-link" ng-href="{{ successCtrl.votes.mp_website }}">Website</a></li>
+
+  </ul>
+  <div class="expenses">
+
+  <a class="web-link" ng-href="{{ successCtrl.votes.expenses_url }}">Expenses Record</a>
+  </div>
+  <p data-ng-bind="successCtrl.votes.expenses2009_total_rank"></p>Out Of<p data-ng-bind="successCtrl.votes.expenses2009_total_rank_outof"></p>
+<br>
+<div class="news-results">
+<p>News</p>
+  <ul class="news">
+    <li ng-repeat= "links in successCtrl.newsResults.items">
+      <a ng-href="{{links.link}}">{{links.title}}</a>
+    </li>
+  </ul>
+</div>
+
+  <!-- <ul class="votes">
+    <li data-ng-bind="successCtrl.votes."
+  </ul> -->
+</div>
+  </div>
+</fieldset>
+</div>

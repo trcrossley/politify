@@ -11,7 +11,6 @@ politify.controller('PolitifyController', ['MpSearch', 'NewsSearch', function (M
     MpSearch.query(self.postcode)
       .then(function(response) {
         self.mpResults = response.data;
-
         NewsSearch.query(self.mpResults.full_name)
           .then(function(response) {
             self.newsResults = response.data;
