@@ -7,7 +7,7 @@
     <title>Politify</title>
     <!-- Styling -->
     <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
-    <link href="site.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
   </head>
@@ -16,19 +16,21 @@
       <!-- Toolbar Container -->
       <md-toolbar layout="row" layout-align="space-around center" class="md-whiteframe-z1">
         <div flex class="md-toolbar-tools">
-          <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
+          <md-button class="md-icon-button" hide-gt-sm aria-label="Show Menu">
               <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:left;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
           </md-button>
           <h2 style="color:white;">POLITIFY</h2>
-            <h1 flex layout-align="space-around center" style="color:white;">
-                <span>{{title | uppercase}}</span>
-            </h1>
+          <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
+              <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:left;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
+          </md-button>
+          <h1 flex layout-align="space-around center" style="color:white;">
+              <span>{{title | uppercase}}</span>
+          </h1>
           <a href="https://github.com/trcrossley/politify"><ng-md-icon icon="github-circle" size="48" style="fill:white;vertical-align:middle;"></ng-md-icon></a>
         </div>
       </md-toolbar>
 
-      <div>
-
+      <!-- Sidenav -->
       <div class="container" layout="row" flex>
         <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                   md-component-id="left"
@@ -45,6 +47,7 @@
             </md-list>
         </md-sidenav>
 
+      <!-- Main Window -->
       <main class="md-padding" layout="row" flex>
         <md-content flex id="content">
           <div class="fade-view" ui-view="">
@@ -71,7 +74,6 @@
       </div> -->
 
 
-</div>
 
 
     <!-- Bower Components -->
