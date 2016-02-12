@@ -21,6 +21,7 @@
     <script src="js/authenticationFactory.js"></script>
     <script src="js/registrationController.js"></script>
     <script src="js/successController.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
   </head>
 
   <body ng-controller="SuccessController as successCtrl">
@@ -35,6 +36,11 @@
 
     <div class="main" ng-view>
 
+    </div>
+
+    <div>
+      <a class="twitter-timeline" href="https://twitter.com/rickygervais" data-widget-id="698106960999247872" data-screen-name="rickygervais">Tweets by @rickygervais</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
   </body>
 </html>
