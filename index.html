@@ -9,20 +9,21 @@
     <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="bower_components/angular-material/themes/amber-theme.css">
+    <link rel="stylesheet" href="bower_components/angular-material/themes/light-blue-theme.css">
+    <link rel="stylesheet" href="bower_components/angular-material/themes/grey-theme.css">
+
 
   </head>
 
   <body layout="column" ng-controller="IndexCtrl" ng-cloak>
       <!-- Toolbar Container -->
-      <md-toolbar layout="row" layout-align="space-around center" class="md-whiteframe-z1">
+      <md-toolbar layout="row" layout-align="space-around center" class="md-whiteframe-z1 md-primary" >
         <div flex class="md-toolbar-tools">
           <md-button class="md-icon-button" hide-gt-sm aria-label="Show Menu">
               <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:left;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
           </md-button>
-          <h2 style="color:white;">POLITIFY</h2>
-          <md-button class="md-icon-button" hide-gt-md aria-label="Show Menu">
-              <ng-md-icon icon="{{menuIcon}}" style="fill:white;vertical-align:left;" ng-click="menuToggle()" hide-gt-sm></ng-md-icon>
-          </md-button>
+          <h2 flex layout-align="space-around center" style="color:white;">POLITIFY</h2>
           <h1 flex layout-align="space-around center" style="color:white;">
               <span>{{title | uppercase}}</span>
           </h1>
@@ -30,20 +31,31 @@
         </div>
       </md-toolbar>
 
+      <md-progress-linear class="md-accent" mode="determinate" ng-value="30"></md-progress-linear>
+
+
       <!-- Sidenav -->
       <div class="container" layout="row" flex>
         <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                  flex="15"
                   md-component-id="left"
-                  style="background-color:#000000;"
+                  style="background-color:white;"
                   md-is-locked-open="$mdMedia('gt-sm')">
             <md-list>
               <md-list-item ng-click="go('home','home');menuToggle();">
-                  <i class="material-icons" style="color:white;"></i> <p style="font-size:18px;color:white;">HOME</p>
+                  <i class="material-icons" style="color:white;"></i> <p style="font-size:18px;color:black;">HOME</p>
               </md-list-item>
               <md-divider></md-divider>
               <md-list-item ng-repeat="item in menuItems" ng-click="go(item.path,item.name);menuToggle();">
-                  <p style="font-size:18px;color:white;">{{item.name | uppercase}}</p>
+                  <p style="font-size:18px;color:black;">{{item.name | uppercase}}</p>
               </md-list-item>
+              <md-divider></md-divider>
+              <md-list-item>
+                <div flex layout="column">
+                  <img src="css/img/fist_black.jpg" width="100%" flex />
+                </div>
+              </md-list-item>
+
             </md-list>
         </md-sidenav>
 

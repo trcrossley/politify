@@ -42,43 +42,15 @@ politify.config(function ($stateProvider,$urlRouterProvider) {
     });
 });
 
-// politify.config(['$routeProvider', function($routeProvider) {
-//   $routeProvider.
-//     when('/home', {
-//       templateUrl: 'views/home.html',
-//       controller: 'HomeCtrl'
-//     }).
-//     when('/login', {
-//       templateUrl: 'views/login.html',
-//       controller: 'RegistrationController'
-//     }).
-//     when('/register', {
-//       templateUrl: 'views/register.html',
-//       controller: 'RegistrationController'
-//     }).
-//     when('/success', {
-//       templateUrl: 'views/success.html',
-//       controller: 'SuccessController',
-//       resolve: {
-//         currentAuth: function(Authentication) {
-//           return Authentication.requireAuth();
-//         } //current Auth
-//       } //resolve
-//     }).
-//     otherwise({
-//       redirectTo: '/home'
-//     });
-// }]);
-
 politify.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('blue', {
+      .primaryPalette('light-blue', {
           'default': '400', // by default use shade 400 from the cyan palette for primary intentions
           'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
           'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-          'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+          'hue-3': 'A400' // use shade A100 for the <code>md-hue-3</code> class
       })
-      .accentPalette('blue-grey')
+      .accentPalette('amber')
       .warnPalette('red')
       .backgroundPalette('grey');
 });
