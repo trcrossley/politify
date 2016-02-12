@@ -23,7 +23,11 @@
 
   <a class="web-link" ng-href="{{ successCtrl.votes.expenses_url }}">Expenses Record</a>
   </div>
-  <p data-ng-bind="successCtrl.votes.expenses2009_total_rank"></p>Out Of<p data-ng-bind="successCtrl.votes.expenses2009_total_rank_outof"></p>
+  <p>Total expenses:</p>
+  <p data-ng-bind="successCtrl.totalExpenses"></p>
+  <!-- <p data-ng-bind="successCtrl.votes.expenses2009_total_rank"></p>Out Of<p data-ng-bind="successCtrl.votes.expenses2009_total_rank_outof"></p> -->
+<br>
+    <a class="web-link" ng-href="http://www.theyworkforyou.com/mp/{{successCtrl.mpResults.person_id}}/{{successCtrl.mpName}}/{{successCtrl.mpConstituency}}/votes">See how ... votes</a>
 <br>
 <div class="news-results">
 <p>News</p>
