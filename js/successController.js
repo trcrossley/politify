@@ -37,7 +37,7 @@ politify.controller('SuccessController', ['MpSearch', 'NewsSearch', 'Votes', 'Re
     self.mp_id = ResultsFactory.mp_id(self.mpResults);
     self.mp_link_name = ResultsFactory.mp_link_name(self.mpResults);
     self.mpConstituency = ResultsFactory.mpConstituency(self.mpResults);
-    self.totalExpenses = ResultsFactory.totalExpenses(self.votes);
+    
 
   };
 

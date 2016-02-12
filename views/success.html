@@ -11,6 +11,7 @@
   </div>
   <div class="all-results" ng-show="successCtrl.validate && successCtrl.postcode">
   <ul class="results">
+
     <li data-ng-bind="successCtrl.mpResults.full_name"></li>
     <li data-ng-bind="successCtrl.mpResults.party"></li>
     <li id="constituency" data-ng-bind="successCtrl.mpResults.constituency"></li>
@@ -24,7 +25,8 @@
   <a class="web-link" ng-href="{{ successCtrl.votes.expenses_url }}">Expenses Record</a>
   </div>
   <p>Total expenses:</p>
-  <p data-ng-bind="successCtrl.totalExpenses"></p>
+  <p ng-model="successCtrl">{{ successCtrl.votes.expenses2009_total | currency:"£" }}</p>
+
   <!-- <p data-ng-bind="successCtrl.votes.expenses2009_total_rank"></p>Out Of<p data-ng-bind="successCtrl.votes.expenses2009_total_rank_outof"></p> -->
 <br>
     <a class="web-link" ng-href="http://www.theyworkforyou.com/mp/{{successCtrl.mpResults.person_id}}/{{successCtrl.mpName}}/{{successCtrl.mpConstituency}}/votes">See how ... votes</a>

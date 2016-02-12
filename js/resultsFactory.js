@@ -49,10 +49,6 @@ politify.factory('ResultsFactory', [function() {
     return mpResults.constituency.replace(/\s+/g, '');
   };
 
-  factory.totalExpenses = function(votes) {
-     var expenses = votes.expenses2009_total;
-     return "£" + expenses;
-  }
 
   return factory;
 }]);
