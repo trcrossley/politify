@@ -22,6 +22,7 @@
     <script src="js/authenticationFactory.js"></script>
     <script src="js/registrationController.js"></script>
     <script src="js/successController.js"></script>
+    <script src="js/mpDbFactory.js"></script>
 
     <!-- twitter -->
     <script src="http://platform.twitter.com/widgets.js"></script>
@@ -36,6 +37,8 @@
     <div class="userinfo" ng-show="currentUser" ng-controller="RegistrationController">
       <span class="userinfo">Hi {{ currentUser.firstname }}</span>
       <a ng-href="#/login" ng-click="logout()">logout</a>
+      <button ng-click="successCtrl.getMPData()">TEST</button>
+      {{successCtrl.mpdata.twitterhandle}}
     </div>
 
     <div class="main" ng-view>

@@ -5,6 +5,14 @@ politify.factory('ResultsFactory', [function() {
     return mpResults.full_name;
   };
 
+  factory.mp_first_name = function(mpResults) {
+    return mpResults.given_name;
+  };
+
+  factory.mp_family_name = function(mpResults) {
+    return mpResults.family_name;
+  };
+
   factory.party = function(mpResults) {
     return mpResults.party;
   };
