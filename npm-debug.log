@@ -9,8 +9,13 @@
 6 silly lifecycle politify@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle politify@1.0.0~start: politify@1.0.0
 8 verbose lifecycle politify@1.0.0~start: unsafe-perm in lifecycle true
+<<<<<<< HEAD
 9 verbose lifecycle politify@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/garethmckenna/Projects/politify/node_modules/.bin:/Users/garethmckenna/.rvm/gems/ruby-2.2.1/bin:/Users/garethmckenna/.rvm/gems/ruby-2.2.1@global/bin:/Users/garethmckenna/.rvm/rubies/ruby-2.2.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/garethmckenna/.rvm/bin
 10 verbose lifecycle politify@1.0.0~start: CWD: /Users/garethmckenna/Projects/politify
+=======
+9 verbose lifecycle politify@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Jon/makers/politify/node_modules/.bin:/Users/Jon/.rvm/gems/ruby-2.2.3/bin:/Users/Jon/.rvm/gems/ruby-2.2.3@global/bin:/Users/Jon/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/Users/Jon/.rvm/bin
+10 verbose lifecycle politify@1.0.0~start: CWD: /Users/Jon/makers/politify
+>>>>>>> 9f31fecde903056be2ded231caa17673ab9cd285
 11 silly lifecycle politify@1.0.0~start: Args: [ '-c', 'http-server .' ]
 12 silly lifecycle politify@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle politify@1.0.0~start: Failed to exec start script
@@ -25,7 +30,11 @@
 14 verbose stack     at maybeClose (internal/child_process.js:821:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid politify@1.0.0
+<<<<<<< HEAD
 16 verbose cwd /Users/garethmckenna/Projects/politify
+=======
+16 verbose cwd /Users/Jon/makers/politify
+>>>>>>> 9f31fecde903056be2ded231caa17673ab9cd285
 17 error Darwin 15.3.0
 18 error argv "/usr/local/Cellar/node/5.5.0/bin/node" "/usr/local/bin/npm" "start"
 19 error node v5.5.0
