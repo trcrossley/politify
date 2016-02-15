@@ -2,6 +2,12 @@ var politify = angular.module('Politify',
 ['ngResource', 'ngRoute', 'firebase'])
 .constant('FIREBASE_URL', 'https://politify.firebaseio.com/');
 
+politify.filter("sanitize", ['$sce', function($sce) {
+  return function(htmlCode){
+    return $sce.trustAsHtml(htmlCode);
+  }
+}]);
+
 politify.run(['$rootScope', '$location',
   function($rootScope, $location) {
     $rootScope.$on('$routeChangeError',

@@ -40,7 +40,7 @@
       <p data-ng-bind="successCtrl.mpResults.office[0].dept"></p>
       <p><img ng-src="http://www.theyworkforyou.com/{{successCtrl.mpResults.image}}" alt="No Image available"></img></p>
       <p><a class="web-link" ng-href="{{ successCtrl.votes.mp_website }}">Website</a></p>
-      <p><a class="web-link" ng-href="http://www.theyworkforyou.com/mp/{{successCtrl.mpResults.person_id}}/{{successCtrl.mpName}}/{{successCtrl.mpConstituency}}/votes">See how ... votes</a></p>
+      <p><a class="web-link" ng-href="http://www.theyworkforyou.com/mp/{{successCtrl.mpResults.person_id}}/{{successCtrl.mpName}}/{{successCtrl.mpConstituency}}/votes">See how {{successCtrl.mpResults.full_name}} votes</a></p>
 
   </div>
 
@@ -80,17 +80,19 @@
     <h2>News</h2>
     <br>
     <ul class="news">
-      <li ng-repeat= "links in successCtrl.newsResults.items">
+      <p ng-repeat= "links in successCtrl.newsResults.items">
         <a ng-href="{{links.link}}">{{links.title}}</a>
-      </li>
+      </p>
     </ul>
   </div>
   <div ng-show="tab.isSet(5)">
     <h2>Finacial Info</h2>
     <br>
-    <p ng-model="successCtrl">{{ successCtrl.mpResults.full_name }}'s finacial interests</p>
+    <div ng-model="successCtrl">
+    <p> {{ successCtrl.mpResults.full_name }}'s finacial interests</p>
     <br>
-    <div data-ng-bind="successCtrl.votes.register_member_interests_html">
+      <div ng-bind-html="successCtrl.votes.register_member_interests_html | sanitize"></div>    
+    </div>
   </div>
   <br>
   <div ng-show="tab.isSet(6)">
