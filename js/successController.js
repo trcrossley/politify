@@ -9,23 +9,24 @@ politify.controller('SuccessController', ['MpSearch', 'NewsSearch', 'Votes', 'Re
       .then(function(response) {
         self.mpResults = response.data;
         console.log(response);
-        // NewsSearch.query(self.mpResults.full_name)
-        //   .then(function(response) {
-        //     self.newsResults = response.data;
-        //     console.log(response);
+        NewsSearch.query(self.mpResults.full_name)
+          .then(function(response) {
+            self.newsResults = response.data;
+            console.log(response);
         Votes.query(self.mpResults.person_id)
         .then(function(response){
           self.votes = response.data;
           console.log(response);
           self.validate = true;
         });
-        console.log(mpDbFactory.query(self.mpResults.given_name, self.mpResults.family_name)
+        mpDbFactory.query(self.mpResults.given_name, self.mpResults.family_name)
         .then(function(result) {
           console.log(result);
-          self.details = result;
-        }));
+          self.mpDetails = result;
+          self.showResults();
+        });
       });
-      // });
+      });
     }
   };
 
@@ -44,16 +45,7 @@ politify.controller('SuccessController', ['MpSearch', 'NewsSearch', 'Votes', 'Re
     self.mp_id = ResultsFactory.mp_id(self.mpResults);
     self.mp_link_name = ResultsFactory.mp_link_name(self.mpResults);
     self.mpConstituency = ResultsFactory.mpConstituency(self.mpResults);
+    self.mpTwitterHandle = ResultsFactory.mpTwitterHandle(self.mpDetails);
   };
-
-  // self.getMPData = function() {
-  //   var ref = new Firebase('https://politify.firebaseio.com/'+);
-  //
-  //   ref.on("value", function(snapshot) {
-  //     self.mpdata = (snapshot.val());
-  //   });
-  //
-  // };
-
 
 }]);
